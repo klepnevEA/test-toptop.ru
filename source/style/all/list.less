@@ -1,0 +1,65 @@
+.list {
+	
+	&__elem {
+		display: flex;
+		margin-bottom: 30px;
+		
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__image {
+		flex: 1 1 20%;
+		height: auto;
+		margin: 5px 22px 0 0;
+		overflow: hidden;
+		
+		img {
+			width: 100%;
+		}
+	}
+
+
+	&__text {
+		flex: 1 1 80%;
+		font-family: 'GothamPro-Medium';
+		font-size: 16px;
+		background-color: #fff;
+		overflow-y: auto;
+		transition: .3s;
+			
+			&__close {
+				display: none;
+				float: right;
+				padding: 0 0 10px 10px;
+				font-size: 20px;
+			}	
+	}
+}
+
+@media (max-width: 320px) {
+	.list {
+		&__image {
+			flex: 1 1 100vw;
+			margin: 0;
+		}
+
+		&__text {
+			position: fixed;
+			top: 0;
+			left: 100vw;
+			width: 100vw;
+			height: 100vh;
+			padding: 10px;
+			
+			&__close {
+				display: block;
+			}	
+			
+			&.open-text {
+				left: 0;
+			}
+		}
+	}
+}

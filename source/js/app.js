@@ -12,14 +12,18 @@ $(document).ready(function() {
 	}
 
 	var textOpen = function() {
-		
-		var that = $(this),
-			thatParent = that.parent(),
-			thatText = thatParent.find('.list__text');
-			
-			thatText.addClass('open-text');
-			thatText.on('click', textClose);
-			$("html,body").css("overflow","hidden");
+		if($(window).width() <= 320) {
+			var that = $(this),
+				thatParent = that.parent(),
+				thatText = thatParent.find('.list__text');
+				
+				thatText.addClass('open-text');
+				thatText.on('click', textClose);
+				$("html,body").css("overflow","hidden");
+		} else {
+			return false;
+		}
+
 	}
 
 	$('.list__image').on('click', textOpen);
